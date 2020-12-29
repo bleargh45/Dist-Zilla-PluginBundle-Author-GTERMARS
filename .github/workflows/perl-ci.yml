@@ -1,0 +1,44 @@
+---
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+    name: "Perl v${{ matrix.perl-version }}"
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        perl-version:
+          - "latest"
+          - "5.30"
+          - "5.28"
+          - "5.26"
+          - "5.24"
+          - "5.22"
+          - "5.20"
+          - "5.18"
+          - "5.16"
+          - "5.14"
+
+    container:
+      image: perldocker/perl-tester:${{ matrix.perl-version }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install CPM
+        uses: perl-actions/install-with-cpm@stable
+        with:
+          sudo: false
+
+      - name: Install baseline dependencies
+        run: cpm install -g --no-test --show-build-log-on-failure $(egrep Dist::Zilla dist.ini | awk '{ print $1 }')
+
+      - name: Install missing author dependencies
+        run: cpm install -g --no-test --show-build-log-on-failure $(dzil listdeps --author --missing)
+
+      - name: Test
+        run: dzil test --all
