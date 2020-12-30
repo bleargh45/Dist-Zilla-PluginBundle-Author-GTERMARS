@@ -29,16 +29,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Install CPM
+      - name: Install dependencies
         uses: perl-actions/install-with-cpm@stable
         with:
           sudo: false
-
-      - name: Install baseline dependencies
-        run: cpm install -g --no-test --show-build-log-on-failure $(egrep Dist::Zilla dist.ini | awk '{ print $1 }')
-
-      - name: Install missing author dependencies
-        run: cpm install -g --no-test --show-build-log-on-failure $(dzil listdeps --author --missing)
+          cpanfile: "cpanfile"
+          args: "--with-all"
 
       - name: Test
         run: dzil test --all
