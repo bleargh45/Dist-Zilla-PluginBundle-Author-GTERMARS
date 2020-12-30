@@ -132,6 +132,8 @@ commit_msg = Version bump.
 
 # CUSTOMIZATION
 
+## Our Configuration Options
+
 - fake\_release
 
     A boolean option, which when set, removes `[UploadToCPAN]` and replaces it with
@@ -139,6 +141,24 @@ commit_msg = Version bump.
 
     Defaults to false, and can also be set with the `FAKE_RELEASE=1` environment
     variable.
+
+## POD Coverage
+
+Subroutines can be considered "covered" for POD Coverage checks, by adding a
+directive to the POD itself, as described in [Pod::CoverageTrustPod](https://metacpan.org/pod/Pod%3A%3ACoverageTrustPod):
+
+```
+=for Pod::Coverage foo bar baz
+```
+
+## POD Spelling
+
+Stopwords for POD Spelling checks can be added by adding a directive to the POD
+itself, as described in [Pod::Spell](https://metacpan.org/pod/Pod%3A%3ASpell):
+
+```
+=for stopwords foo bar baz
+```
 
 ## Providing Plugin Configuration
 

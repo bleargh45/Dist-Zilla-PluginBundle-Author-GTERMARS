@@ -285,6 +285,8 @@ It is I<roughly> equivalent to the following:
 
 =head1 CUSTOMIZATION
 
+=head2 Our Configuration Options
+
 =over
 
 =item fake_release
@@ -296,6 +298,20 @@ Defaults to false, and can also be set with the C<FAKE_RELEASE=1> environment
 variable.
 
 =back
+
+=head2 POD Coverage
+
+Subroutines can be considered "covered" for POD Coverage checks, by adding a
+directive to the POD itself, as described in L<Pod::CoverageTrustPod>:
+
+  =for Pod::Coverage foo bar baz
+
+=head2 POD Spelling
+
+Stopwords for POD Spelling checks can be added by adding a directive to the POD
+itself, as described in L<Pod::Spell>:
+
+  =for stopwords foo bar baz
 
 =head2 Providing Plugin Configuration
 
