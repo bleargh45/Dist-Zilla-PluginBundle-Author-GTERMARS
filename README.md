@@ -133,6 +133,11 @@ release_message = Release - v%v
 [Git::Commit / Commit Version Bump]
 allow_dirty_match = ^lib/
 commit_msg = Version bump.
+
+; ... after release; push changes up to Git (unless "fake_release" is set)
+[Git::Push]
+push_to = origin
+push_to = origin releases:releases
 ```
 
 # CUSTOMIZATION
