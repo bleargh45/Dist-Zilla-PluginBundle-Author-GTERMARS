@@ -103,8 +103,11 @@ sub configure {
     ],
 
     ###########################################################################
+    # Run "xt/" tests, but don't include them in the release.
+    [ 'RunExtraTests' ],
+
+    ###########################################################################
     # Munge existing files
-    [ 'ExtraTests' ],
     [ 'NextRelease' ],
     [ 'RewriteVersion' ],
 
@@ -242,8 +245,11 @@ It is I<roughly> equivalent to the following:
   mode = auto
 
   ; ==============================================================================
+  ; Run "xt/" tests, but don't include them in the release.
+  [RunExtraTests]
+
+  ; ==============================================================================
   ; Munge existing files
-  [ExtraTests]
   [NextRelease]
   [RewriteVersion]
 
@@ -331,7 +337,7 @@ you to remove specific plugins like this:
 
   [@Author::GTERMARS]
   -remove = GitHub::Meta
-  -remove = ExtraTests
+  -remove = RunExtraTests
 
 =head1 AUTHOR
 

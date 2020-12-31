@@ -12,6 +12,7 @@ requires "Dist::Zilla::Plugin::Prereqs::AuthorDeps" => "0.006";
 requires "Dist::Zilla::Plugin::Prereqs::FromCPANfile" => "0.08";
 requires "Dist::Zilla::Plugin::PromptIfStale" => "0.057";
 requires "Dist::Zilla::Plugin::ReadmeAnyFromPod" => "0.163250";
+requires "Dist::Zilla::Plugin::RunExtraTests" => "0.028";
 requires "Dist::Zilla::Plugin::StaticInstall" => "0.012";
 requires "Dist::Zilla::Plugin::Test::CleanNamespaces" => "0";
 requires "Dist::Zilla::Plugin::Test::Compile" => "0";
