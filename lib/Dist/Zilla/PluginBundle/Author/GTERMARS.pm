@@ -127,7 +127,7 @@ sub configure {
     # ... do the release
     ( $self->fake_release
       ? ( [ 'FakeRelease' ] )
-      : ( [ 'ConfirmRelease' ], [ 'UploadToCPAN' ] )
+      : ( [ 'ConfirmRelease' ], [ 'UploadToCPAN' ], [ 'GitHub::Update' ] )
     ),
     # ... after release; commit Changes and Tag release
     [ 'Git::Commit' => 'Commit Changes' => {
@@ -262,9 +262,10 @@ It is I<roughly> equivalent to the following:
   [TestRelease]
   [Git::Check / after tests]
 
-  ; ... do the release
+  ; ... do the release (unless "fake_release" is set)
   [ConfirmRelease]
   [UploadToCPAN]
+  [GitHub::Update]
 
   ; ... after release; commit Changes and Tag release
   [Git::Commit / Commit Changes]
@@ -291,7 +292,8 @@ It is I<roughly> equivalent to the following:
 
 =item fake_release
 
-A boolean option, which when set, removes C<[UploadToCPAN]> and replaces it with
+A boolean option, which when set, removes C<[ConfirmRelease]>,
+C<[UploadToCPAN]>, and C<[GitHub::Update]>, replacing them with
 C<[FakeRelease]>.
 
 Defaults to false, and can also be set with the C<FAKE_RELEASE=1> environment

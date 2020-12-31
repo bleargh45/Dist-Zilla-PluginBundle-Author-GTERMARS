@@ -108,9 +108,10 @@ skip = ExtUtils::MakeMaker
 [TestRelease]
 [Git::Check / after tests]
 
-; ... do the release
+; ... do the release (unless "fake_release" is set)
 [ConfirmRelease]
 [UploadToCPAN]
+[GitHub::Update]
 
 ; ... after release; commit Changes and Tag release
 [Git::Commit / Commit Changes]
@@ -136,7 +137,8 @@ commit_msg = Version bump.
 
 - fake\_release
 
-    A boolean option, which when set, removes `[UploadToCPAN]` and replaces it with
+    A boolean option, which when set, removes `[ConfirmRelease]`,
+    `[UploadToCPAN]`, and `[GitHub::Update]`, replacing them with
     `[FakeRelease]`.
 
     Defaults to false, and can also be set with the `FAKE_RELEASE=1` environment
