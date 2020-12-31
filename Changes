@@ -1,6 +1,8 @@
 Revision history for Perl extension Dist::Zilla::PluginBundle::Author::GTERMARS
 
 {{$NEXT}}
+
+0.02      2020-12-31 11:58:32-08:00 America/Vancouver
     - Exclude `cpanfile` from distribution tarballs
     - Leave `xt/` tests in `xt/`, don't move them to `t/`
 
