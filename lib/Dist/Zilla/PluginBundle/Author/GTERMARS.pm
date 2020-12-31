@@ -35,7 +35,7 @@ sub configure {
     ###########################################################################
     # Gather up all the files we need in our distribution
     [ 'GatherDir' => {
-        exclude_filename => [qw( dist.ini )],
+        exclude_filename => [qw( dist.ini cpanfile )],
       },
     ],
     [ 'ExecDir' ],
@@ -182,6 +182,7 @@ It is I<roughly> equivalent to the following:
   ; Gather up all the files we need in our distribution
   [GatherDir]
   exclude_filename = dist.ini
+  exclude_filename = cpanfile
   [ExecDir]
   [ShareDir]
   [PruneCruft]

@@ -28,6 +28,7 @@ module = Dist::Zilla::PluginBundle::Author::GTERMARS
 ; Gather up all the files we need in our distribution
 [GatherDir]
 exclude_filename = dist.ini
+exclude_filename = cpanfile
 [ExecDir]
 [ShareDir]
 [PruneCruft]
