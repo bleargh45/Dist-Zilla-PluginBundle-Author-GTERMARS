@@ -27,6 +27,7 @@ my %WriteMakefileArgs = (
     "Dist::Zilla::Plugin::Prereqs::FromCPANfile" => "0.08",
     "Dist::Zilla::Plugin::PromptIfStale" => "0.057",
     "Dist::Zilla::Plugin::ReadmeAnyFromPod" => "0.163250",
+    "Dist::Zilla::Plugin::RunExtraTests" => "0.028",
     "Dist::Zilla::Plugin::StaticInstall" => "0.012",
     "Dist::Zilla::Plugin::Test::CleanNamespaces" => 0,
     "Dist::Zilla::Plugin::Test::Compile" => 0,
@@ -52,7 +53,7 @@ my %WriteMakefileArgs = (
     "Test::DiagINC" => "0.002",
     "Test::More" => 0
   },
-  "VERSION" => "0.01",
+  "VERSION" => "0.02",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -71,6 +72,7 @@ my %FallbackPrereqs = (
   "Dist::Zilla::Plugin::Prereqs::FromCPANfile" => "0.08",
   "Dist::Zilla::Plugin::PromptIfStale" => "0.057",
   "Dist::Zilla::Plugin::ReadmeAnyFromPod" => "0.163250",
+  "Dist::Zilla::Plugin::RunExtraTests" => "0.028",
   "Dist::Zilla::Plugin::StaticInstall" => "0.012",
   "Dist::Zilla::Plugin::Test::CleanNamespaces" => 0,
   "Dist::Zilla::Plugin::Test::Compile" => 0,

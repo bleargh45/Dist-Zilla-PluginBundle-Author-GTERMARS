@@ -26,6 +26,7 @@ DESCRIPTION
       ; Gather up all the files we need in our distribution
       [GatherDir]
       exclude_filename = dist.ini
+      exclude_filename = cpanfile
       [ExecDir]
       [ShareDir]
       [PruneCruft]
@@ -85,8 +86,11 @@ DESCRIPTION
       mode = auto
     
       ; ==============================================================================
+      ; Run "xt/" tests, but don't include them in the release.
+      [RunExtraTests]
+    
+      ; ==============================================================================
       ; Munge existing files
-      [ExtraTests]
       [NextRelease]
       [RewriteVersion]
     
@@ -172,7 +176,7 @@ CUSTOMIZATION
 
       [@Author::GTERMARS]
       -remove = GitHub::Meta
-      -remove = ExtraTests
+      -remove = RunExtraTests
 
 AUTHOR
 

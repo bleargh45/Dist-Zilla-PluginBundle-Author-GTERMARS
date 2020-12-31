@@ -8,7 +8,7 @@ with qw(
 );
 use namespace::autoclean;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 has fake_release => (
   is         => 'ro',
@@ -35,7 +35,7 @@ sub configure {
     ###########################################################################
     # Gather up all the files we need in our distribution
     [ 'GatherDir' => {
-        exclude_filename => [qw( dist.ini )],
+        exclude_filename => [qw( dist.ini cpanfile )],
       },
     ],
     [ 'ExecDir' ],
@@ -103,8 +103,11 @@ sub configure {
     ],
 
     ###########################################################################
+    # Run "xt/" tests, but don't include them in the release.
+    [ 'RunExtraTests' ],
+
+    ###########################################################################
     # Munge existing files
-    [ 'ExtraTests' ],
     [ 'NextRelease' ],
     [ 'RewriteVersion' ],
 
@@ -182,6 +185,7 @@ It is I<roughly> equivalent to the following:
   ; Gather up all the files we need in our distribution
   [GatherDir]
   exclude_filename = dist.ini
+  exclude_filename = cpanfile
   [ExecDir]
   [ShareDir]
   [PruneCruft]
@@ -241,8 +245,11 @@ It is I<roughly> equivalent to the following:
   mode = auto
 
   ; ==============================================================================
+  ; Run "xt/" tests, but don't include them in the release.
+  [RunExtraTests]
+
+  ; ==============================================================================
   ; Munge existing files
-  [ExtraTests]
   [NextRelease]
   [RewriteVersion]
 
@@ -330,7 +337,7 @@ you to remove specific plugins like this:
 
   [@Author::GTERMARS]
   -remove = GitHub::Meta
-  -remove = ExtraTests
+  -remove = RunExtraTests
 
 =head1 AUTHOR
 
