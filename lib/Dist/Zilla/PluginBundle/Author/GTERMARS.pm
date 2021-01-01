@@ -127,6 +127,7 @@ sub configure {
     [ 'Git::Check' => 'initial check' ],
     [ 'TestRelease' ],
     [ 'Git::Check' => 'after tests' ],
+    [ 'CheckIssues' ],
     # ... do the release
     ( $self->fake_release
       ? ( [ 'FakeRelease' ] )
@@ -273,6 +274,7 @@ It is I<roughly> equivalent to the following:
   [Git::Check / initial check]
   [TestRelease]
   [Git::Check / after tests]
+  [CheckIssues]
 
   ; ... do the release (unless "fake_release" is set)
   [ConfirmRelease]
