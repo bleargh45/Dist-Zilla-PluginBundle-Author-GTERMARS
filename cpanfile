@@ -35,8 +35,11 @@ requires "namespace::autoclean" => "0";
 on 'test' => sub {
   requires "ExtUtils::MakeMaker" => "0";
   requires "File::Spec" => "0";
+  requires "File::Temp" => "0";
+  requires "IO::Handle" => "0";
+  requires "IPC::Open3" => "0";
   requires "Test::DiagINC" => "0.002";
-  requires "Test::More" => "0";
+  requires "Test::More" => "0.94";
 };
 
 on 'test' => sub {
@@ -48,17 +51,13 @@ on 'configure' => sub {
 };
 
 on 'develop' => sub {
-  requires "File::Spec" => "0";
-  requires "File::Temp" => "0";
-  requires "IO::Handle" => "0";
-  requires "IPC::Open3" => "0";
   requires "Test::CPAN::Meta" => "0";
   requires "Test::CleanNamespaces" => "0.15";
   requires "Test::EOF" => "0";
   requires "Test::EOL" => "0";
   requires "Test::Kwalitee" => "1.21";
   requires "Test::MinimumVersion" => "0";
-  requires "Test::More" => "0.94";
+  requires "Test::More" => "0.88";
   requires "Test::NoBreakpoints" => "0.15";
   requires "Test::NoTabs" => "0";
   requires "Test::Pod" => "1.41";

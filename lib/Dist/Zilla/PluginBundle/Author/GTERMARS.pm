@@ -83,10 +83,8 @@ sub configure {
     [ 'Test::UnusedVars' ],
     [ 'Test::Kwalitee' ],
     [ 'Test::Compile' => {
-        xt_mode          => 1,
         fake_home        => 1,
-        filename         => 'xt/author/compile.t',
-        fail_on_warning  => 'author',
+        filename         => 't/01-compile.t',
         bail_out_on_fail => 1,
       },
     ],
@@ -238,10 +236,8 @@ It is I<roughly> equivalent to the following:
   [Test::UnusedVars]
   [Test::Kwalitee]
   [Test::Compile]
-  xt_mode = 1
   fake_home = 1
-  filename = xt/author/compile.t
-  fail_on_warning = author
+  filename = t/01-compile.t
   bail_out_on_fail = 1
 
   ; ==============================================================================
