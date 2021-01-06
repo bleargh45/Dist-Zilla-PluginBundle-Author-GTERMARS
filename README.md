@@ -88,6 +88,7 @@ mode = auto
 ; ==============================================================================
 ; Run "xt/" tests, but don't include them in the release.
 [RunExtraTests]
+default_jobs = 8
 
 ; ==============================================================================
 ; Munge existing files

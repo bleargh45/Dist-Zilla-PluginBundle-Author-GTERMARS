@@ -102,7 +102,10 @@ sub configure {
 
     ###########################################################################
     # Run "xt/" tests, but don't include them in the release.
-    [ 'RunExtraTests' ],
+    [ 'RunExtraTests', {
+        default_jobs => 8,
+      },
+    ],
 
     ###########################################################################
     # Munge existing files
@@ -250,6 +253,7 @@ It is I<roughly> equivalent to the following:
   ; ==============================================================================
   ; Run "xt/" tests, but don't include them in the release.
   [RunExtraTests]
+  default_jobs = 8
 
   ; ==============================================================================
   ; Munge existing files
