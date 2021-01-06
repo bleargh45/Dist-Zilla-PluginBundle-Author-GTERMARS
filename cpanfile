@@ -8,6 +8,7 @@ requires "Dist::Zilla::Plugin::CopyFilesFromBuild" => "0";
 requires "Dist::Zilla::Plugin::EnsureChangesHasContent" => "0";
 requires "Dist::Zilla::Plugin::Git" => "2.046";
 requires "Dist::Zilla::Plugin::GitHub" => "0.46";
+requires "Dist::Zilla::Plugin::GitHub::RequireGreenBuild" => "0";
 requires "Dist::Zilla::Plugin::Prereqs::AuthorDeps" => "0.006";
 requires "Dist::Zilla::Plugin::Prereqs::FromCPANfile" => "0.08";
 requires "Dist::Zilla::Plugin::PromptIfStale" => "0.057";

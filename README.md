@@ -109,6 +109,7 @@ skip = ExtUtils::MakeMaker
 [Git::Check / initial check]
 [TestRelease]
 [Git::Check / after tests]
+[GitHub::RequireGreenBuild]
 [CheckIssues]
 
 ; ... do the release (unless "fake_release" is set)
