@@ -107,6 +107,7 @@ skip = ExtUtils::MakeMaker
 [Git::CheckFor::MergeConflicts]
 [Git::CheckFor::CorrectBranch]
 [EnsureChangesHasContent]
+[EnsureMinimumPerl]
 [Git::Check / initial check]
 [TestRelease]
 [Git::Check / after tests]

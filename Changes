@@ -7,6 +7,8 @@ Revision history for Perl extension Dist::Zilla::PluginBundle::Author::GTERMARS
     - Pre-release, ensure that a successful GitHub Actions run exists
     - Run "xt/" tests with "--jobs=8"; I've got CPU cores to spare
     - Explicit dependency on Perl v5.14; minimum for DZil
+    - Add "EnsureMinimumPerl", to remind me to specify a minimum Perl version
+      for all my distributions.
 
 0.02      2020-12-31 11:58:32-08:00 America/Vancouver
     - Exclude `cpanfile` from distribution tarballs

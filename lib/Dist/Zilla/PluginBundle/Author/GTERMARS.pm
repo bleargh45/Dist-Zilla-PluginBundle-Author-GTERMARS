@@ -125,6 +125,7 @@ sub configure {
     [ 'Git::CheckFor::MergeConflicts' ],
     [ 'Git::CheckFor::CorrectBranch' ],
     [ 'EnsureChangesHasContent' ],
+    [ 'EnsureMinimumPerl' ],
     [ 'Git::Check' => 'initial check' ],
     [ 'TestRelease' ],
     [ 'Git::Check' => 'after tests' ],
@@ -272,6 +273,7 @@ It is I<roughly> equivalent to the following:
   [Git::CheckFor::MergeConflicts]
   [Git::CheckFor::CorrectBranch]
   [EnsureChangesHasContent]
+  [EnsureMinimumPerl]
   [Git::Check / initial check]
   [TestRelease]
   [Git::Check / after tests]
