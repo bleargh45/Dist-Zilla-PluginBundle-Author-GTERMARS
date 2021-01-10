@@ -29,6 +29,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Perl version
+        run: perl -V
+
       - name: Install dependencies
         uses: perl-actions/install-with-cpm@stable
         with:
@@ -38,3 +41,10 @@ jobs:
 
       - name: Test
         run: dzil test --all
+
+      - name: Archive CPM logs
+        if: ${{ failure() }}
+        uses: actions/upload-artifact@v2
+        with:
+          name: build.log
+          path: ~/.perl-cpm/build.log*
