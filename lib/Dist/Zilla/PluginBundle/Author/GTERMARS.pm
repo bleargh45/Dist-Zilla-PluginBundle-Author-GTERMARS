@@ -38,7 +38,10 @@ sub configure {
         exclude_filename => [qw( dist.ini cpanfile )],
       },
     ],
-    [ 'ExecDir' ],
+    [ 'ExecDir' => {
+      dir => (-d 'script' ? 'script' : 'bin'),
+      },
+    ],
     [ 'ShareDir' ],
     [ 'PruneCruft' ],
 
@@ -196,6 +199,7 @@ It is I<roughly> equivalent to the following:
   exclude_filename = dist.ini
   exclude_filename = cpanfile
   [ExecDir]
+  dir = (-d 'script' ? 'script' : 'bin')
   [ShareDir]
   [PruneCruft]
 

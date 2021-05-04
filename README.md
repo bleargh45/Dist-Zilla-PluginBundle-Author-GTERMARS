@@ -30,6 +30,7 @@ module = Dist::Zilla::PluginBundle::Author::GTERMARS
 exclude_filename = dist.ini
 exclude_filename = cpanfile
 [ExecDir]
+dir = (-d 'script' ? 'script' : 'bin')
 [ShareDir]
 [PruneCruft]
 
