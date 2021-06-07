@@ -33,7 +33,7 @@ requires "Dist::Zilla::PluginBundle::Git::CheckFor" => "0.014";
 requires "Dist::Zilla::Role::PluginBundle::Config::Slicer" => "0";
 requires "Dist::Zilla::Role::PluginBundle::PluginRemover" => "0";
 requires "namespace::autoclean" => "0";
-requires "perl" => "5.014";
+requires "perl" => "5.020";
 
 on 'test' => sub {
   requires "ExtUtils::MakeMaker" => "0";
