@@ -126,7 +126,10 @@ sub configure {
       },
     ],
     [ 'Git::CheckFor::MergeConflicts' ],
-    [ 'Git::CheckFor::CorrectBranch' ],
+    [ 'Git::CheckFor::CorrectBranch' => {
+        release_branch => 'main',
+      },
+    ],
     [ 'EnsureChangesHasContent' ],
     [ 'EnsureMinimumPerl' ],
     [ 'Git::Check' => 'initial check' ],
@@ -276,6 +279,7 @@ It is I<roughly> equivalent to the following:
   skip = ExtUtils::MakeMaker
   [Git::CheckFor::MergeConflicts]
   [Git::CheckFor::CorrectBranch]
+  release_branch = main
   [EnsureChangesHasContent]
   [EnsureMinimumPerl]
   [Git::Check / initial check]

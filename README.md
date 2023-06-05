@@ -107,6 +107,7 @@ check_all_prereqs = 1
 skip = ExtUtils::MakeMaker
 [Git::CheckFor::MergeConflicts]
 [Git::CheckFor::CorrectBranch]
+release_branch = main
 [EnsureChangesHasContent]
 [EnsureMinimumPerl]
 [Git::Check / initial check]
