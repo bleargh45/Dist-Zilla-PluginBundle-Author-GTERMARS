@@ -40,6 +40,9 @@ jobs:
       - name: Perl version
         run: perl -V
 
+      - name: DZil version
+        run: dzil --version
+
       - name: Install dependencies
         uses: perl-actions/install-with-cpm@stable
         with:
