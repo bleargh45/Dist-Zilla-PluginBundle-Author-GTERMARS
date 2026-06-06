@@ -65,7 +65,7 @@ on 'develop' => sub {
   requires "Test::NoBreakpoints" => "0.15";
   requires "Test::NoTabs" => "0";
   requires "Test::Pod" => "1.41";
-  requires "Test::Spelling" => "0.12";
+  requires "Test::Spelling" => "0.17";
   requires "Test::Synopsis" => "0";
   requires "Test::Vars" => "0";
 };
